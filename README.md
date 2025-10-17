@@ -1,7 +1,7 @@
 1. **Clone and Setup**
 
 ```bash
-git clone <my-url>
+git clone https://github.com/lexmanthefirst/hng-backend-track.git
 cd hng-backend
 ```
 
