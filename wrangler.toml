@@ -1,0 +1,13 @@
+name = "hng-backend"
+compatibility_date = "2024-11-18"
+main = "src/index.ts"
+
+[env.production]
+name = "hng-backend"
+
+[env.staging]
+name = "hng-backend-staging"
+
+[env.development]
+name = "hng-backend-development"
+
