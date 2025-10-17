@@ -29,6 +29,9 @@ export interface Env {
   CLOUDFLARE_ACCOUNT_ID?: string;
   CLOUDFLARE_DATABASE_ID?: string;
   CLOUDFLARE_D1_TOKEN?: string;
+
+  // External API URLs
+  API_URL: string;
 }
 
 /**

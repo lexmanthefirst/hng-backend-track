@@ -1,16 +1,17 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { v4 as uuidv4 } from "uuid";
+import { Env } from "./types/env";
 
-const app = new Hono();
+const app = new Hono<{ Bindings: Env }>();
 app.use("*", cors());
 app.get("/", (c) => {
-  return c.text("Hello Hono!");
+  return c.text("Hello HNG!");
 });
 
 app.get("/me", async (c) => {
   try {
-    const response = await fetch("https://catfact.ninja/fact");
+    const response = await fetch(c.env.API_URL);
     const data = (await response.json()) as { fact: string };
     return c.json({
       status: "success",
