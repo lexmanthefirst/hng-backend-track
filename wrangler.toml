@@ -5,6 +5,11 @@ main = "src/index.ts"
 [env.production]
 name = "hng-backend"
 
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "hng-backend"
+database_id = "132fd06c-c5a2-4dc6-b093-0e8e8e3cbf59"
+
 [env.staging]
 name = "hng-backend-staging"
 

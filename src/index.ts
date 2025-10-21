@@ -1,9 +1,10 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { v4 as uuidv4 } from "uuid";
-import { Env } from "./types/env";
+import stringsRoute from "./routes/strings";
+import type { AppEnv } from "./types/app";
 
-const app = new Hono<{ Bindings: Env }>();
+const app = new Hono<AppEnv>();
 app.use("*", cors());
 app.get("/", (c) => {
   return c.text("Hello HNG!");
@@ -19,7 +20,7 @@ app.get("/me", async (c) => {
         id: uuidv4(),
         email: "lexmanthefirst@gmail.com",
         name: "Alex Okhitoya",
-        stack: "ExpressJs, FastAPI, and Hono",
+        stack: ["ExpressJs", "FastAPI", "Hono"],
       },
       timestamp: new Date().toISOString(),
       fact: data.fact,
@@ -34,5 +35,7 @@ app.get("/me", async (c) => {
     );
   }
 });
+
+app.route("/strings", stringsRoute);
 
 export default app;
