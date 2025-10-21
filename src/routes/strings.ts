@@ -523,7 +523,7 @@ stringsRoute.get(
 );
 
 stringsRoute.delete(
-  "/by-value/:value",
+  "/:value",
   zValidator("param", queryParamSchema),
   async (c: AppContext) => {
     const { value } = getValid<z.infer<typeof queryParamSchema>>(c, "param");
@@ -542,6 +542,7 @@ stringsRoute.delete(
   }
 );
 
+//delete string by ID
 stringsRoute.delete(
   "/by-id/:id",
   zValidator("param", z.object({ id: z.string().min(1) })),
