@@ -1,5 +1,6 @@
 name = "hng-backend"
 compatibility_date = "2024-11-18"
+compatibility_flags = ["nodejs_compat"]
 main = "src/index.ts"
 
 [env.production]
@@ -9,6 +10,14 @@ name = "hng-backend"
 binding = "DB"
 database_name = "hng-backend"
 database_id = "132fd06c-c5a2-4dc6-b093-0e8e8e3cbf59"
+
+[[env.production.hyperdrive]]
+binding = "HYPERDRIVE"
+id = "5ba98a5264e348d381b1f60e462a66be"
+
+[[env.production.kv_namespaces]]
+binding = "KV"
+id = "13be451938fc4cac88a74b5baf9c41d8"
 
 [env.staging]
 name = "hng-backend-staging"

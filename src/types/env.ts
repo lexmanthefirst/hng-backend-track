@@ -32,6 +32,9 @@ export interface Env {
 
   // External API URLs
   API_URL: string;
+
+  //Hyperdrive binding interface
+  HYPERDRIVE: Hyperdrive;
 }
 
 /**
